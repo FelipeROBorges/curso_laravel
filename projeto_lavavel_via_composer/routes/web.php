@@ -23,3 +23,10 @@ Route::get('/', 'PrincipalController@principal');
 Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
 Route::get('/contato', 'ContatoController@contato');
+
+Route::prefix('app')->group(function (){
+    Route::get('/cliente',function (){return 'Clientes';});
+    Route::get('/fornecedor',function (){return 'Fornecedor';});
+    Route::get('/produtos', function (){return 'Produtos';});
+    Route::get('/van', function (){return '<h1>Te amo meu amor!S2</h1>';});
+});
