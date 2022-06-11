@@ -12,38 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 /*
-
 Route::get('/', function () {
-    return 'Olá mundo!';
+    return 'Olá, seja bem vindo ao curso!';
 });
 */
 
-Route::get('/','PrincipalController@principal');
-// O laravel entende que quando é mandado uma string, está se referindo a um contorlador com uma ação a ser executada
+Route::get('/', 'PrincipalController@principal');
 
-/*
-Route::get('/sobre-nos', function () {
-    return 'Está na página sobre nos!';
-});
+Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
-Route::get('/contato', function () {
-    return 'Esse é meu contato!';
-});
-*/
-
-Route::get('/contato','ContatoController@contato');
-Route::get('/sobre_nos','SobreNosController@sobre_nos');
-
-/*
-    Verbos http
-
-    get
-    post
-    put
-    patch
-    delete
-    options
-
-*/
+Route::get('/contato', 'ContatoController@contato');
