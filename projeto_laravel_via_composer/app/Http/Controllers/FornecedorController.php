@@ -11,6 +11,9 @@ class FornecedorController extends Controller
             0 => ['nome' => 'Fornecedor 1', 'status' => 'N']
         ];
 
+    //    operador condicional ternario 
+        $msg = isset($fornecedores) ? 'Verdade' : 'Mentira';
+        echo $msg;
         return view('app.fornecedor.index', compact('fornecedores'));
     }
 }
