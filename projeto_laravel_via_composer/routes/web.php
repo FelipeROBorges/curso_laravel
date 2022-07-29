@@ -30,6 +30,17 @@ Route::prefix('/app')->group(function(){
 
 });
 
+Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
+
+
+// Route::get('/rota1', function(){ return 'rota1';})->name('site.rota1');
+
+// // Recurso de redirecionamento de rotas: redirect
+// Route::get('/rota2', function(){ return redirect()->route('site.rota1');})->name('site.rota2');
+
+Route::fallback(function(){
+    echo 'A rota acessada não existe. <a href="'.route('site.index').'"> Clique aqui</a> para ir até a página inicial.';
+});
 
 /* 
 * Sempre manter aparametros opicionais ao lado direitro
