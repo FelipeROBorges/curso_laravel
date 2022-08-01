@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PrincipalController@principal')->name('site.index');
 Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobrenos');
 Route::get('/contato', 'ContatoController@contato')->name('site.contato');
+
+// Ao modificar o verbo http existem algumas diferenças funcadamentais, como o token 
+
+Route::post('/contato', 'ContatoController@contato')->name('site.contato');
 Route::get('/login', function(){ return 'Login';})->name('site.login');
 
 // Agrupamento de rotas atravez do prefixo app e chamada de group
